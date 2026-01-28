@@ -2,24 +2,27 @@
 
 <%= form_with local: true, url: sessions_path, method: :post do |f| %>
   <% if flash[:alert] %>
-    <div style="color: red; background: #f8d7da; padding: 1rem; border-radius: 5px; margin-bottom: 1rem;">
+    <div style="color: red; background: #f8d7da; padding: 1.2rem 1.5rem; border-radius: 10px; margin-bottom: 1.5rem; border-left: 5px solid #f5a9b8; font-weight: 600;">
       <%= flash[:alert] %>
     </div>
   <% end %>
 
   <div>
-    <%= f.label :email %><br>
-    <%= f.email_field :email, required: true, autofocus: true %>
+    <%= f.label :email, "Email Address" %><br>
+    <%= f.email_field :email, required: true, autofocus: true, placeholder: "Enter your email" %>
   </div>
 
   <div>
-    <%= f.label :password %><br>
-    <%= f.password_field :password, required: true %>
+    <%= f.label :password, "Password" %><br>
+    <%= f.password_field :password, required: true, placeholder: "Enter your password" %>
   </div>
 
   <div>
-    <%= f.submit "Sign in" %>
+    <%= f.submit "Sign In" %>
   </div>
 <% end %>
 
-<p>Don't have an account? <%= link_to "Sign up", new_user_path %></p>
+<p>Don't have an account? <%= link_to "Sign up here", new_user_path %></p>
+<p style="font-size: 0.9rem; color: #999; margin-top: 1rem;">
+  Make sure you've already created an account before logging in.
+</p>

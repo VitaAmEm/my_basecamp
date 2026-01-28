@@ -4,13 +4,20 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: params[:email])
+    email = params[:email]
+    password = params[:password]
     
-    if user && user.authenticate(params[:password])
+    user = User.find_by(email: email)
+    
+    if user.present? && user.authenticate(password)
       session[:user_id] = user.id
       redirect_to user_path(user), notice: "Logged in successfully!"
     else
-      flash.now[:alert] = "Invalid email or password"
+      if user.blank?
+        flash.now[:alert] = "No account found with that email address"
+      else
+        flash.now[:alert] = "Invalid password"
+      end
       render :new, status: :unprocessable_entity
     end
   end
