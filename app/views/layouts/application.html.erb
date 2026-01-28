@@ -15,6 +15,7 @@
         <%= link_to "MyBasecamp", root_path %>
       </div>
       <div class="navbar-menu">
+        <%= link_to "Welcome", root_path %>
         <% if logged_in? %>
           <span class="user-welcome">Welcome, <%= current_user.name %></span>
           <%= link_to "My Profile", user_path(current_user) %>
