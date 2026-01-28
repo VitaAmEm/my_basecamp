@@ -1,14 +1,20 @@
 <h1>Log In</h1>
 
-<%= form_with url: sessions_path, local: true do |f| %>
+<%= form_with local: true, url: sessions_path, method: :post do |f| %>
+  <% if flash[:alert] %>
+    <div style="color: red; background: #f8d7da; padding: 1rem; border-radius: 5px; margin-bottom: 1rem;">
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
+
   <div>
     <%= f.label :email %><br>
-    <%= f.email_field :email %>
+    <%= f.email_field :email, required: true, autofocus: true %>
   </div>
 
   <div>
     <%= f.label :password %><br>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, required: true %>
   </div>
 
   <div>
