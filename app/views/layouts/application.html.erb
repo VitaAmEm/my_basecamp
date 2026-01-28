@@ -19,7 +19,7 @@
           <span class="user-welcome">Welcome, <%= current_user.name %></span>
           <%= link_to "My Profile", user_path(current_user) %>
           <%= link_to "All Users", users_path %>
-          <%= link_to "Log Out", logout_path, method: :delete, data: { confirm: "Are you sure?" } %>
+          <%= button_to "Log Out", logout_path, method: :delete, style: "background: none; border: none; padding: 0; color: #667eea; font-weight: 600; cursor: pointer; text-decoration: none;" %>
         <% else %>
           <%= link_to "Sign Up", new_user_path %>
           <%= link_to "Log In", login_path %>
