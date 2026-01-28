@@ -1,0 +1,37 @@
+<h1>Edit User</h1>
+
+<%= form_with model: @user, local: true do |f| %>
+  <div>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :email %><br>
+    <%= f.email_field :email %>
+  </div>
+
+  <div>
+    <%= f.label :password %><br>
+    <%= f.password_field :password, placeholder: "Leave blank to keep current password" %>
+  </div>
+
+  <div>
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <% if current_user&.admin? && current_user != @user %>
+    <div>
+      <%= f.label :admin %><br>
+      <%= f.checkbox :admin %>
+      <label for="user_admin">Admin role</label>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
+<%= link_to "Back to profile", user_path(@user), class: "btn" %>
