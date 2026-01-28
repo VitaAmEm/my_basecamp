@@ -16,10 +16,10 @@
       </div>
       <div class="navbar-menu">
         <% if logged_in? %>
-          <span class="user-welcome">Welcome, <%= current_user.name %></span>
+          <span class="user-welcome">Welcome <%= current_user.name %></span>
           <%= link_to "My Profile", user_path(current_user) %>
           <%= link_to "All Users", users_path %>
-          <%= button_to "Log Out", logout_path, method: :delete, style: "background: none; border: none; padding: 0; color: #667eea; font-weight: 600; cursor: pointer; text-decoration: none;" %>
+          <%= button_to "Log Out", logout_path, method: :delete, class: "logout-btn" %>
         <% else %>
           <%= link_to "Sign Up", new_user_path %>
           <%= link_to "Log In", login_path %>
