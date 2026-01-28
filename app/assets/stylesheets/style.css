@@ -120,6 +120,17 @@ body::before {
   box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
 }
 
+.navbar-menu form button {
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  color: inherit !important;
+  font: inherit !important;
+  cursor: inherit !important;
+  width: 100%;
+  height: 100%;
+}
+
 .user-welcome {
   color: #667eea;
   font-weight: 700;
