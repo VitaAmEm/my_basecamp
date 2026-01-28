@@ -20,7 +20,7 @@
 
     <div class="welcome-actions">
       <% if logged_in? %>
-        <p>Hello <%= current_user.name %>!</p>
+        <p>Welcome <%= current_user.name %></p>
         <%= link_to "Go to My Profile", user_path(current_user), class: "btn btn-primary" %>
         <%= link_to "View All Users", users_path, class: "btn btn-secondary" %>
       <% else %>
