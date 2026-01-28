@@ -90,40 +90,31 @@ body::before {
 .navbar-menu a,
 .navbar-menu form {
   text-decoration: none;
-  color: #667eea;
+  color: white;
   font-weight: 600;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
   position: relative;
   display: flex;
   align-items: center;
-  background: none;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border: none;
-  padding: 0;
+  padding: 10px 20px;
   cursor: pointer;
   font: inherit;
-  box-shadow: none;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
   outline: none;
+  border-radius: 10px;
 }
 
 .navbar-menu a::after,
 .navbar-menu form::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #667eea, #764ba2);
-  transition: width 0.3s ease;
+  display: none;
 }
 
-.navbar-menu a:hover::after,
-.navbar-menu form:hover::after {
-  width: 100%;
-}
-
-.navbar-menu a:hover {
-  color: #764ba2;
+.navbar-menu a:hover,
+.navbar-menu form:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
 }
 
 .user-welcome {
