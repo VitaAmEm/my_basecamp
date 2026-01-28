@@ -96,30 +96,13 @@ body::before {
   position: relative;
   display: flex;
   align-items: center;
-}
-
-.logout-btn {
-  background: none !important;
-  border: none !important;
-  padding: 0 !important;
-  color: #667eea !important;
-  font-weight: 600 !important;
-  cursor: pointer !important;
-  text-decoration: none !important;
-  font: inherit !important;
-  box-shadow: none !important;
-  outline: none !important;
-  position: relative !important;
-  display: flex !important;
-  align-items: center !important;
-}
-
-.logout-btn:hover {
-  color: #764ba2 !important;
-}
-
-.logout-btn:active {
-  transform: none !important;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  box-shadow: none;
+  outline: none;
 }
 
 .navbar-menu a::after,
