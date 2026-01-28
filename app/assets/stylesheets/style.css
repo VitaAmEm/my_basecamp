@@ -92,8 +92,10 @@ body::before {
   text-decoration: none;
   color: #667eea;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .logout-btn {
@@ -107,6 +109,9 @@ body::before {
   font: inherit !important;
   box-shadow: none !important;
   outline: none !important;
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
 }
 
 .logout-btn:hover {
