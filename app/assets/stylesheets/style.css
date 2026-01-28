@@ -105,6 +105,12 @@ body::before {
   cursor: pointer !important;
   text-decoration: none !important;
   font: inherit !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.logout-btn:hover {
+  color: #764ba2 !important;
 }
 
 .navbar-menu a::after {
