@@ -118,6 +118,10 @@ body::before {
   color: #764ba2 !important;
 }
 
+.logout-btn:active {
+  transform: none !important;
+}
+
 .navbar-menu a::after,
 .navbar-menu form::after {
   content: '';
