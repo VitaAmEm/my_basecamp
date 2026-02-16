@@ -1,14 +1,16 @@
 class User < ApplicationRecord
-    has_secure_password
-    validates :name, presence: true
-    validates :email, presence: true, uniqueness: true
-    validates :password, length: {minimum: 6}, allow_blank: true
+  has_many :projects, dependent: :destroy
 
-    def setAdmin
-      update(admin: true)
-    end
+  has_secure_password
+  validates :name, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :password, length: { minimum: 6 }, allow_blank: true
 
-    def removeAdmin
-      update(admin: false)
-    end
+  def setAdmin
+    update(admin: true)
+  end
+
+  def removeAdmin
+    update(admin: false)
+  end
 end

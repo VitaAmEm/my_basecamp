@@ -14,14 +14,31 @@
     
     <% if current_user == @user %>
       <%= link_to "Edit", edit_user_path(@user), class: "btn" %>
-      <%= link_to "Delete account", user_path(@user), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+
+      <%= button_to "Delete account", user_path(@user),
+            method: :delete,
+            onclick: "return confirm('Are you sure?')",
+            class: "btn btn-danger" %>
+
     <% elsif current_user&.admin? %>
       <% if @user.admin? %>
-        <%= button_to "Remove Admin", user_path(@user), method: :patch, params: { user: { admin: false } }, class: "btn" %>
+        <%= button_to "Remove Admin",
+              user_path(@user),
+              method: :patch,
+              params: { user: { admin: false } },
+              class: "btn" %>
       <% else %>
-        <%= button_to "Make Admin", user_path(@user), method: :patch, params: { user: { admin: true } }, class: "btn" %>
+        <%= button_to "Make Admin",
+              user_path(@user),
+              method: :patch,
+              params: { user: { admin: true } },
+              class: "btn" %>
       <% end %>
-      <%= link_to "Delete user", user_path(@user), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+
+      <%= button_to "Delete user", user_path(@user),
+            method: :delete,
+            onclick: "return confirm('Are you sure?')",
+            class: "btn btn-danger" %>
     <% end %>
   </div>
 </div>
