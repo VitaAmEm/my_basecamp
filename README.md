@@ -31,8 +31,8 @@ http://localhost:3000
 
 ## Usage
 After starting the server, open a web browser and navigate to http://localhost:3000
-. From there, a new user can register an account and will be automatically authenticated. Authenticated users can create and manage projects through the interface. Project owners and administrators have permission to update or delete projects, while regular users are restricted to their own resources. Administrators additionally have the ability to manage user roles within the platform.
+From there, a new user can register an account and will be automatically authenticated. Authenticated users can create and manage projects through the interface. Project owners and administrators have permission to update or delete projects, while regular users are restricted to their own resources. Administrators additionally have the ability to manage user roles within the platform.
 
 ### The Core Team
-Vita - Part I: User authentication foundation, User model and controller, database structure, role system base, UX setup
+Vita - Part I: User authentication foundation, User model and controller, database structure, role system base, UX setup.
 Zlata - Part II: Project model and migration, a ProjectsController with all RESTful actions, routes and views, plus owner/admin authorization.
